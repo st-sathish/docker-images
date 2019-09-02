@@ -6,6 +6,7 @@
 
 # Pull base image.
 FROM dockerfile/java:oracle-java8
+MAINTAINER Sathish
 
 # ES VERSION
 ENV ES_VERSION 6.4.3
