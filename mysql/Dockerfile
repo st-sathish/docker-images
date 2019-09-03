@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 LABEL maintainer="Sathish"
 
-ENV MYSQL_USER=mysql \
+ENV MYSQL_USER=root \
     MYSQL_VERSION=5.7.26 \
     MYSQL_DATA_DIR=/var/lib/mysql \
     MYSQL_RUN_DIR=/run/mysqld \
