@@ -5,7 +5,7 @@
 #
 
 # Pull base image.
-FROM dockerfile/java:oracle-java8
+FROM openjdk:14
 MAINTAINER Sathish
 
 # ES VERSION
