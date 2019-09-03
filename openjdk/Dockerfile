@@ -6,15 +6,11 @@ ENV PATH $JAVA_HOME/bin:$PATH
 ENV OPENJDK_VERSION 14-ea+12
 ENV JAVA_URL https://download.java.net/java/early_access/jdk14/12/GPL/openjdk-14-ea+12_linux-x64_bin.tar.gz
 
-RUN set -eux; \
-	\
-	wget -O /tmp/openjdk-"$OPENJDK_VERSION"_linux-x64_bin.tar.gz "$JAVA_URL"; \
-	mkdir -p "$JAVA_HOME"; \
-	tar --extract --file /tmp/openjdk-"$OPENJDK_VERSION"_linux-x64_bin.tar.gz --directory "$JAVA_HOME" --strip-components 1; \
-	rm -f /tmp/openjdk-"$OPENJDK_VERSION"_linux-x64_bin.tar.gz; \
-	\
-# basic smoke test
-	java --version; \
-	javac --version
+RUN wget "$JAVA_URL" -O /tmp/openjdk-"$OPENJDK_VERSION"_linux-x64_bin.tar.gz \
+    && mkdir -p "$JAVA_HOME" \
+    && tar xfvz /tmp/openjdk-"$OPENJDK_VERSION"_linux-x64_bin.tar.gz --directory "$JAVA_HOME" --strip-components 1 \
+    && rm -f /tmp/openjdk-"$OPENJDK_VERSION"_linux-x64_bin.tar.gz \
+    && java --version \
+    && javac --version
 
-CMD ["jshell"]
+CMD ["/bin/bash"]
