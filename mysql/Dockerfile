@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM scratch
 
 LABEL maintainer="Sathish"
 
