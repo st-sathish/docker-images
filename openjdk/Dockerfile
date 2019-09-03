@@ -1,5 +1,4 @@
-# FROM alpine:3.10
-FROM scratch
+FROM ubuntu:18.04
 ENV JAVA_HOME /opt/openjdk-14
 ENV PATH $JAVA_HOME/bin:$PATH
 
