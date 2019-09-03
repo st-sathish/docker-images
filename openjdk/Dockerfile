@@ -1,10 +1,10 @@
 FROM ubuntu:18.04
-ENV JAVA_HOME /opt/openjdk-11
+ENV JAVA_HOME /opt/openjdk-14
 ENV PATH $JAVA_HOME/bin:$PATH
 
 # https://jdk.java.net/
-ENV OPENJDK_VERSION 11+28
-ENV JAVA_URL https://download.java.net/java/GA/jdk11/28/GPL/openjdk-11+28_linux-x64_bin.tar.gz
+ENV OPENJDK_VERSION 14-ea+12
+ENV JAVA_URL https://download.java.net/java/early_access/jdk14/12/GPL/openjdk-14-ea+12_linux-x64_bin.tar.gz
 
 RUN set -eux; \
 	\
