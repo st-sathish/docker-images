@@ -2,12 +2,12 @@ version: "3"
 services:
     mysql:
         build: ./mysql
-        image: mysql:5.7
+        image: localhost:5000/mysql:5.7
     openjdk:
         build: ./openjdk
-        image: openjdk:14
+        image: localhost:5000/openjdk:14
     elasticsearch:
         build: ./elasticsearch
-        image: elasticsearch:6.4.3
+        image: localhost:5000/elasticsearch:6.4.3
         depends_on:
             - openjdk
